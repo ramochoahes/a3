@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'valController@getVal');
+Route::get('index', 'valController@returnIndex');
+Route::get('site', 'valController@returnSite');
