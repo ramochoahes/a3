@@ -124,6 +124,7 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -176,6 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        # DebugBar
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -225,6 +228,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        # 'Input' alias added
+        'Input' => Illuminate\Support\Facades\Input::class,
+        # DebugBar
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

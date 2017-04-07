@@ -7,6 +7,8 @@ use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Input;
 
 class ValController extends Controller
 {
@@ -16,27 +18,38 @@ class ValController extends Controller
       if ($_GET) {
 
         $validator = Validator::make($request->all(), [
-          	'email' => 'required',
-          	'password' => 'required',
-              ]);
+            	'email' => 'required',
+            	'password' => 'required',
+                ]);
 
         if ($validator->fails()) {
     	       return redirect('index') //change this to your desired url
         		->withErrors($validator)
         		->withInput();
           }
-          else {
-            return view('site');
-          }
-          }
+        else {
+          $correct = "Try Again";
+          return redirect('site')->withCorrect($correct);
+        }
+
+      }
+
+      return view('index');
+    }
+
+
+    public function returnIndex(){
+      return view('index');
 
     }
 
-      public function returnIndex(){
-        return view('index');
-      }
 
-      public function returnSite(){
-        return view('site');
-      }
+    public function returnSite(Request $request){
+
+      $correct = "Try Again";
+      return view('site')->withCorrect($correct);
+
+    }
+
+
 }

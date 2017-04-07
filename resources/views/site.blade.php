@@ -41,6 +41,7 @@
           <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
         </div><!--?rel=0;&autoplay=1-->
       </div>
+
       <!--Checkboxes-->
       <form action="site.php">
         <h1>Rick Astley would never?</h1>
@@ -55,3 +56,16 @@
         <input type="checkbox" name="chk" value="8"> All of the above<br>
         <input type="submit" value="Submit" name='chksub'>
       </form>
+
+
+      @if(Input::get('chk')!=8&&(Input::get('chk')!=null))
+
+        <h1> {{$correct}} </h1>
+
+      @endif
+
+      @if(Input::get('chk')==8&&(Input::get('chksub')!=null)) {
+
+        <h1> {{$correct}} </h1>
+
+      @endif
