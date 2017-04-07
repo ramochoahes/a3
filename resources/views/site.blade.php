@@ -45,7 +45,7 @@
       <!--Checkboxes-->
       <form action="site">
         <h1>Rick Astley would never?</h1>
-        <input type="checkbox" name="chk" value="0"> Give you up<br><!--name needed to send to DB-->
+        <input type="checkbox" name="chk" value="0"> Give you up<br><!--name needs to sent to DB-->
         <input type="checkbox" name="chk" value="1"> Let you down<br>
         <input type="checkbox" name="chk" value="2"> Run around<br>
         <input type="checkbox" name="chk" value="3"> Desert you<br>
@@ -68,16 +68,14 @@
 
         <h1> {{$correct}} </h1>
 
-        <!--?php echo "<h1>$string</h1>" ?-->
           <div class="radio">
             <label>
               <h4>Continue?</h4>
                 <form action=''>
-                <input type="radio" name="more" value="Yes" checked> Yes<br>
-                <input type="radio" name="more" value="No" checked> No<br>
+                <input type="radio" name="Yes" value="Yes"> Yes<br>
+                <input type="radio" name="No"  value="No" > No<br>
                 <br>
                 <input type="submit" value="Submit">
-
                 </form>
             </label>
           </div>

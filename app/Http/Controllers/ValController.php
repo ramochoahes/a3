@@ -28,8 +28,8 @@ class ValController extends Controller
         		->withInput();
           }
         else {
-          #$correct = "Try Again";
-          return redirect('site')->withCorrect($correct);
+
+          return redirect('site');
         }
 
       }
@@ -37,17 +37,22 @@ class ValController extends Controller
       return view('index');
     }
 
-
-    public function returnIndex(){
+    /*public function returnIndex(){
       return view('index');
 
-    }
-
+    }*/
 
     public function returnSite(Request $request){
 
       $correct = "Correct";
       $wrong = "Wrong";
+
+      if(Input::get('Yes')!=null){
+
+        return view('sitetwo');
+
+      }
+
       return view('site')->withCorrect($correct)->withWrong($wrong);
 
     }

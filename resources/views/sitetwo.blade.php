@@ -1,8 +1,3 @@
-<?php
-require('logic.php');
-/*foo must be used in the form -->$var = new foo\filename();<--*/
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,7 +42,7 @@ require('logic.php');
         </div>
       </div>
       <!--Checkboxes-->
-      <form action="sitetwo.php">
+      <form action="sitetwo">
         <h3>To fall down at your door, The Proclaimers?</h3>
         <input type="checkbox" name="chk" value="0"> Would walk 500 miles<br><!--name needed to send to DB-->
         <input type="checkbox" name="chk" value="1"> In addition to walking 500 miles, would walk 500 more<br>
@@ -55,7 +50,15 @@ require('logic.php');
         <input type="checkbox" name="chk" value="3"> Would walk more miles than 500 and 500 more<br>
         <input type="submit" value="Submit" name='chksub2'>
       </form>
-      <!--Correct Display-->
-      <?php if($_GET['chk']==1&&isset($_GET['chksub2'])): ?>
-        <?php echo "<h1>$string</h1>" ?>
-      <?php endif; ?>
+
+      @if(Input::get('chk')!=1&&(Input::get('chk')!=null))
+
+        <h1> {{$wrong}} </h1>
+
+      @endif
+
+      @if(Input::get('chk')==1&&(Input::get('chk')!=null))
+
+        <h1> {{$correct}} </h1>
+
+      @endif

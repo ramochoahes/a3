@@ -41,7 +41,7 @@
         <br>
         <h1>Sign In</h1>
       <!--Validation Form-->
-      <form class="form-inline" action="index.php">
+      <form class="form-inline" action="index">
         <div class="form-group">
           <label class="sr-only" for="exampleInputEmail3">Email address</label>
           <input type="email" name="email" class="form-control" id="exampleInputEmail3" placeholder="Email"> <!--name stores its ID in the _GET-->
@@ -54,7 +54,6 @@
       </form>
       <br>
       <!--Validation Message-->
-
 
       @if(count($errors) > 0)
         <ul>
