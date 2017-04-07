@@ -28,7 +28,7 @@ class ValController extends Controller
         		->withInput();
           }
         else {
-          $correct = "Try Again";
+          #$correct = "Try Again";
           return redirect('site')->withCorrect($correct);
         }
 
@@ -46,8 +46,17 @@ class ValController extends Controller
 
     public function returnSite(Request $request){
 
-      $correct = "Try Again";
-      return view('site')->withCorrect($correct);
+      $correct = "Correct";
+      $wrong = "Wrong";
+      return view('site')->withCorrect($correct)->withWrong($wrong);
+
+    }
+
+    public function returnSiteTwo(Request $request){
+
+      $correct = "Correct";
+      $wrong = "Wrong";
+      return view('sitetwo')->withCorrect($correct)->withWrong($wrong);
 
     }
 

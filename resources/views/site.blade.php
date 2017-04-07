@@ -43,7 +43,7 @@
       </div>
 
       <!--Checkboxes-->
-      <form action="site.php">
+      <form action="site">
         <h1>Rick Astley would never?</h1>
         <input type="checkbox" name="chk" value="0"> Give you up<br><!--name needed to send to DB-->
         <input type="checkbox" name="chk" value="1"> Let you down<br>
@@ -60,12 +60,26 @@
 
       @if(Input::get('chk')!=8&&(Input::get('chk')!=null))
 
-        <h1> {{$correct}} </h1>
+        <h1> {{$wrong}} </h1>
 
       @endif
 
-      @if(Input::get('chk')==8&&(Input::get('chksub')!=null)) {
+      @if(Input::get('chk')==8&&(Input::get('chksub')!=null))
 
         <h1> {{$correct}} </h1>
+
+        <!--?php echo "<h1>$string</h1>" ?-->
+          <div class="radio">
+            <label>
+              <h4>Continue?</h4>
+                <form action=''>
+                <input type="radio" name="more" value="Yes" checked> Yes<br>
+                <input type="radio" name="more" value="No" checked> No<br>
+                <br>
+                <input type="submit" value="Submit">
+
+                </form>
+            </label>
+          </div>
 
       @endif

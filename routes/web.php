@@ -14,3 +14,4 @@
 Route::get('/', 'valController@getVal');
 Route::get('index', 'valController@returnIndex');
 Route::get('site', 'valController@returnSite');
+Route::get('sitetwo', 'valController@returnSiteTwo');

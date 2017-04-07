@@ -54,6 +54,8 @@
       </form>
       <br>
       <!--Validation Message-->
+
+
       @if(count($errors) > 0)
         <ul>
             @foreach ($errors->all() as $error)
