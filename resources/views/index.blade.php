@@ -28,7 +28,7 @@
         </nav>
       </div>
     </header>
-    <div class="container">
+  </div>
       <!--Panel-->
         <div class="panel panel-default">
           <div class="panel-heading">
